@@ -7,17 +7,25 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.database
+import com.google.firebase.database.ktx.getValue
+import com.google.firebase.ktx.Firebase
 
 class DoctoreHomeActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var mAuth: FirebaseAuth
+    private lateinit var database:DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_doctore_home)
 
         mAuth = FirebaseAuth.getInstance()
+        database = Firebase.database.reference
 
         val toolbar = findViewById<View>(R.id.toolbar2)
         val spinner = findViewById<View>(R.id.spinner2) as Spinner
@@ -56,6 +64,20 @@ class DoctoreHomeActivity : AppCompatActivity(), View.OnClickListener {
 
             override fun onNothingSelected(parent: AdapterView<*>) {
                 // write code to perform some action
+            }
+        }
+
+        val usernameTxt = findViewById<TextView>(R.id.doctorUsernameTextView)
+
+        val user = mAuth.currentUser
+
+        if (user != null) {
+            database.child("user").child(user.uid).get().addOnSuccessListener {
+                val i = it.getValue<User>()
+
+                if( i != null) {
+                    usernameTxt.text = i.name
+                }
             }
         }
 
