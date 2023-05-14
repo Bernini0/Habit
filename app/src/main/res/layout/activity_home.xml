@@ -141,7 +141,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="#FAFAFA"
-                            android:text="FeedBack" />
+                            android:text="Health News" />
 
                         <Space
                             android:layout_width="match_parent"

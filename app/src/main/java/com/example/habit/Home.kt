@@ -32,7 +32,7 @@ class Home : AppCompatActivity(), View.OnClickListener {
 
         val usernameTxt = findViewById<TextView>(R.id.usernameTextView)
 
-        val logout = arrayOf("Home","Logout")
+        val logout = arrayOf("Home","Feedback","Logout")
 
         //values in the spinner
         val adapter = ArrayAdapter(this, R.layout.spinner_item, logout)
@@ -55,11 +55,15 @@ class Home : AppCompatActivity(), View.OnClickListener {
                     0 ->{
                         //do nothing
                     }
-                    1 -> {
+                    2 -> {
                         mAuth.signOut()
                         val intent = Intent(applicationContext, LoginOnboardingActivity::class.java)
                         startActivity(intent);
                         finish()
+                    }
+                    1 ->{
+                        val intent = Intent(applicationContext, FeedbackActivity::class.java)
+                        startActivity(intent);
                     }
                 }
             }
@@ -127,7 +131,7 @@ class Home : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
             }
             R.id.button420 ->{
-                val intent = Intent(this, FeedbackActivity::class.java)
+                val intent = Intent(this, NewsActivity::class.java)
                 startActivity(intent)
             }
         }

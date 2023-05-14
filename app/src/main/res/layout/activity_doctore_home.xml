@@ -6,6 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".DoctoreHomeActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="right"
+            android:popupTheme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:layout_margin="10dp"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -121,7 +141,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="#FAFAFA"
-                            android:text="Get started" />
+                            android:text="Health News" />
 
                         <Space
                             android:layout_width="match_parent"
