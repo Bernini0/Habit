@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:text="@{message.message}"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:background="@drawable/right_side_background"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
