@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -22,7 +23,7 @@ class ChatAdapter(names: MutableList<AppointmentInfo>, context: Context) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view: View =
-            LayoutInflater.from(context).inflate(R.layout.docot_name_item, parent, false)
+            LayoutInflater.from(context).inflate(R.layout.chat_name_item, parent, false)
         return ViewHolder(view)
     }
 
@@ -37,6 +38,15 @@ class ChatAdapter(names: MutableList<AppointmentInfo>, context: Context) :
             intent.putExtras(bundle)
             context.startActivity(intent)
         }
+
+        holder.detailsButton.setOnClickListener(View.OnClickListener {
+            val intent = Intent(context, PatientActivity::class.java)
+            val bundle = Bundle()
+            bundle.putString("hisUsername", names[position].name)
+            bundle.putString("hisUId", names[position].id)
+            intent.putExtras(bundle)
+            context.startActivity(intent)
+        })
     }
 
     override fun getItemCount(): Int {
@@ -51,10 +61,12 @@ class ChatAdapter(names: MutableList<AppointmentInfo>, context: Context) :
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var titleTextView: TextView
         var emailTextView: TextView
+        var detailsButton: Button
 
         init {
-            titleTextView = itemView.findViewById(R.id.doctorName)
-            emailTextView = itemView.findViewById(R.id.doctorEmail)
+            titleTextView = itemView.findViewById(R.id.chatUserName)
+            emailTextView = itemView.findViewById(R.id.chatUserEmail)
+            detailsButton = itemView.findViewById(R.id.chatUserDetails)
         }
     }
 }
