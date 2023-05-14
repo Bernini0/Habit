@@ -42,6 +42,7 @@ class Home : AppCompatActivity(), View.OnClickListener {
         findViewById<View>(R.id.self_care_container).setOnClickListener(this)
         findViewById<View>(R.id.chat_card).setOnClickListener(this)
         findViewById<View>(R.id.consultation_card).setOnClickListener(this)
+        findViewById<View>(R.id.button420).setOnClickListener(this)
 
 
         //spinner item selection
@@ -123,6 +124,10 @@ class Home : AppCompatActivity(), View.OnClickListener {
             }
             R.id.consultation_card -> {
                 val intent = Intent(this, DoctorActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.button420 ->{
+                val intent = Intent(this, FeedbackActivity::class.java)
                 startActivity(intent)
             }
         }

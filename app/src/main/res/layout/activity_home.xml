@@ -137,11 +137,11 @@
                             android:textStyle="italic" />
 
                         <Button
-                            android:id="@+id/button4"
+                            android:id="@+id/button420"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="#FAFAFA"
-                            android:text="Get started" />
+                            android:text="FeedBack" />
 
                         <Space
                             android:layout_width="match_parent"

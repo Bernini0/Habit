@@ -14,6 +14,22 @@
         android:theme="@style/Theme.App.Starting"
         tools:targetApi="31">
         <activity
+            android:name=".FeedbackActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Habit">
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SENDTO" />
+                <data android:scheme="mailto" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".ConfirmAppointmentsActivity"
             android:exported="false"
             android:theme="@style/Theme.Habit">
@@ -47,7 +63,7 @@
         </activity>
         <activity
             android:name=".DoctoreHomeActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.Habit" />
         <activity
             android:name=".AppointmentActivity"
@@ -59,31 +75,31 @@
             android:theme="@style/Theme.Habit" />
         <activity
             android:name=".LoginDcotorActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.Habit" />
         <activity
             android:name=".SelfCareHomeActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.Habit" />
         <activity
             android:name=".SelfCareQuizActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.Habit" />
         <activity
             android:name=".Home"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.Habit" />
         <activity
             android:name=".SignupActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.Habit" />
         <activity
             android:name=".LoginActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.Habit" />
         <activity
             android:name=".LoginOnboardingActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_profile"
             android:theme="@style/Theme.Habit" />
         <activity
