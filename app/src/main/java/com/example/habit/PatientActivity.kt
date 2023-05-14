@@ -44,6 +44,7 @@ class PatientActivity : AppCompatActivity() {
                 usernameTextView.text = i.name
                 useremailTextView.text = i.email
                 if(i.userType=="doctor"){
+                    usernameTextView.text = i.name + "(" + i.designation+")"
                     userAgeTextView.text = "Age: 44"
                 }
                 else{
