@@ -16,22 +16,22 @@ class DoctoreHomeActivity : AppCompatActivity(), View.OnClickListener {
 
         mAuth = FirebaseAuth.getInstance()
 
-        findViewById<View>(R.id.confirmAppointment).setOnClickListener(this)
-        findViewById<View>(R.id.patientMessages).setOnClickListener(this)
-        findViewById<View>(R.id.doctorLogout).setOnClickListener(this)
+        findViewById<View>(R.id.self_care_container34).setOnClickListener(this)
+        findViewById<View>(R.id.consultation_card34).setOnClickListener(this)
+        findViewById<View>(R.id.chat_card34).setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
         when(p0?.id){
-            R.id.confirmAppointment ->{
+            R.id.self_care_container34 ->{
                 intent = Intent(this, ConfirmAppointmentsActivity::class.java)
                 startActivity(intent)
             }
-            R.id.patientMessages ->{
+            R.id.consultation_card34 ->{
                 val intent = Intent(this, ChatActivity::class.java)
                 startActivity(intent)
             }
-            R.id.doctorLogout->{
+            R.id.chat_card34->{
                 mAuth.signOut()
                 val intent = Intent(applicationContext, LoginOnboardingActivity::class.java)
                 startActivity(intent);
